@@ -19,5 +19,8 @@ mixin list-block()
 		div.select-block__bottom.block-bottom.clearfix
 			div.block-bottom__time 2h ago
 			div.block-bottom__btns
+				div.tooltip
+					div.tooltip__arrow
+					div.tooltip__inner
 				button(type = "button").block-bottom__share
-				button(type = "button").block-bottom__url
+				button(type = "button",data-url = "http://cll.io/a6lnu").block-bottom__url

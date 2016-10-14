@@ -1,7 +1,7 @@
 
 
-let btnUrl = document.querySelector('.block-bottom__url')
-
+let btnUrl = document.querySelectorAll('.block-bottom__url')
+console.log(btnUrl)
 btnUrl.addEventListener('mouseover',showTooltip)
 btnUrl.addEventListener('mouseout',hideTooltip)
 let checkTooltip = false

@@ -1,8 +1,13 @@
 .empty-block
 	block()
+	padding: 15.5px 15.5px 13.5px;
+
+	&:last-child
+		margin-bottom:90px
 
 	.block-bottom
-		padding:12px 0
+		padding: 12px 14px 15px 12px;
+
 	&_type
 		&_archived
 			opacity: 0.7;
@@ -13,20 +18,26 @@
 		&_type
 			&_archived
 				color: #858585
-
 	&__corner
-		width: 0;
-		height: 0;
-		border-top: 48px solid #3c434a;
-		border-left: 48px solid transparent;
-		position: absolute
-		right:0
-		top:0
+		&_type
+			&_protected
+				&:before
+					content: ''
+					display: block
+					@extend .svg-lock
+					position: absolute
+					z-index:2
+					top: 47px;
+					left: 6px;
+					transform: rotate(45deg);
 
-		&:before
-			content: ''
-			display: block
-			@extend .svg-lock
-			position: absolute
-			top: -44px;
-			left: -20px;
+			&_archived
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					@extend .svg-box
+					top: 48px;
+					left: 4px;
+					z-index:2
+					transform: rotate(45deg);

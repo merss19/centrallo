@@ -1,22 +1,23 @@
 mixin main-block()
 	div.main-block
 		div.main-block__text The Dark Knight Rises is a 2012 British-American superhero film directed by Christopher Nolan, who co-wrote the screenplay with his brother Jonathan Nolan, and the story with David S. Goyer. Featuring the DC Comics character Batman, the film is the final installment in Nolan's Batman film trilogy, and the sequel to Batman Begins (2005) and The Dark Knight (2008). Christian Bale reprises the lead role of Bruce Wayne/Batman, with a returning cast of allies: Michael Caine as Alfred Pennyworth, Gary Oldman as James Gordon, and Morgan Freeman as Lucius Fox. The film introduces Selina Kyle (Anne Hathaway), a sly, morally ambiguous cat burglar, and Bane (Tom Hardy), a revolutionary bent on destroying Gotham City who forces an older Bruce Wayne to come out of retirement and become Batman again.
-			div.main-block__photo.photo-block
-				div.photo-block__list.clearfix
-					div.photo-block__item
-						div.photo-block__pic
-							img.photo-block__img(src = "assets/img/content/photo-33.png" alt = "")
-					div.photo-block__item
-						div.photo-block__pic
-							img.photo-block__img(src = "assets/img/content/photo-44.png" alt = "")
-					div.photo-block__item
-						div.photo-block__pic
-							img.photo-block__img(src = "assets/img/content/photo-55.png" alt = "")
-					div.photo-block__item
-						div.photo-block__pic
-							img.photo-block__img(src = "assets/img/content/photo-66.png" alt = "")
+		div.main-block__photo.photo-block
+			div.photo-block__list.clearfix
+				div.photo-block__item
+					div.photo-block__pic
+						img.photo-block__img(src = "assets/img/content/photo-333.png" alt = "")
+				div.photo-block__item
+					div.photo-block__pic
+						img.photo-block__img(src = "assets/img/content/photo-44.png" alt = "")
+				div.photo-block__item
+					div.photo-block__pic
+						img.photo-block__img(src = "assets/img/content/photo-55.png" alt = "")
+				div.photo-block__item
+					div.photo-block__pic
+						img.photo-block__img(src = "assets/img/content/photo-66.png" alt = "")
 		div.main-block__contacts.contacts-block.clearfix
-			div.contacts-block__map
+			div.contacts-block__map-wr
+				div.contacts-block__map
 			div.contacts-block__address.address-block
 				div.address-block__name Merry Bergtraum High School for Business Cariers
 				div.address-block__location
@@ -25,23 +26,26 @@ mixin main-block()
 				a(href="#").address-block__link Watch location on Google Maps
 				div.address-block__name
 		div.main-block__files.files-block
-			div.files-block__list
-				div.files-block__item
+			div.files-block__list.clearfix
+				a(href="#").files-block__item
 					div.files-block__pic
-						img.photo-block__img(src = "assets/img/content/db22.png" alt = "")
+						img.files-block__img(src = "assets/img/content/db22.png" alt = "")
 					div.files-block__name logo_final.eps
-				div.files-block__item
+				a(href="#").files-block__item
 					div.files-block__pic
-						img.photo-block__img(src = "assets/img/content/skydrive22.png" alt = "")
+						img.files-block__img(src = "assets/img/content/skydrive22.png" alt = "")
 					div.files-block__name photos_summer.zip
-				div.files-block__item
+				a(href="#").files-block__item
 					div.files-block__pic
-						img.photo-block__img(src = "assets/img/content/attach22.png" alt = "")
+						img.files-block__img(src = "assets/img/content/attach22.png" alt = "")
 					div.files-block__name work_…hard.doc
 
 
-		div.block-bottom.clearfix
+		div.select-block__bottom.block-bottom.clearfix
 			div.block-bottom__time 2h ago
 			div.block-bottom__btns
-				button(type = "button").block-bottom__url
+				div.tooltip
+					div.tooltip__arrow
+					div.tooltip__inner
 				button(type = "button").block-bottom__share
+				button(type = "button",data-url = "http://cll.io/a6lnu").block-bottom__url
