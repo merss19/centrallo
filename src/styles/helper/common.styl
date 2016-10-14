@@ -1,0 +1,79 @@
+html, body
+	height 100%
+
+.inner
+	max-width 984px
+	padding: 0 12px
+	margin: 0 auto
+	width: 100%
+	height: auto
+	@media (min-width tablet)
+		max-width 1008px
+		padding: 0 24px
+
+.clearfix
+	&:after,
+	&:before
+		display table
+		clear both
+		content ''
+
+ul
+	margin:0
+	list-style none
+
+button
+	border none
+
+.btn
+	border: none
+	font-size: 13px
+	text-align: center
+	border-radius: 4px;
+	padding: 0 6px;
+	height: 32px
+	width:100%
+	background: color-main
+	color: #fff
+	@media (min-width tablet)
+		padding:0 17px
+
+	&_type
+		&_share
+			background: #fff
+			color: #3c434a
+			line-height: 32px;
+
+			&:before
+				content: ''
+				display: inline-block
+				@extend .svg-share
+				position: relative;
+				left: -4px;
+				top: 5px;
+
+		&_download
+			color: color-main
+			background: #fff
+			padding: 0 18px;
+			height: 28px;
+			font-size: 12px;
+			display: inherit;
+			line-height: 28px;
+			text-decoration: none;
+
+			&:hover
+				color: color-main
+
+			@media (min-width tablet)
+				font-size: 13px;
+				padding: 0 25px;
+
+.table
+	display: table
+
+.table-raw
+	display: table-raw
+
+.table-cell
+	display: table-cell

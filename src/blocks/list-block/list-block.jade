@@ -1,0 +1,23 @@
+mixin list-block()
+	div.list-block
+		div.list-block__list
+			div.list-block__item.clearfix
+				div.list-block__name
+					div.list-block__icon.icon-list
+					|Children
+				div.list-block__value.clearfix
+					div.list-block__time 12 items
+					div.list-block__items 7h ago
+			div.list-block__item.clearfix
+				div.list-block__name
+					div.list-block__icon.icon-list
+					|longest title in the world
+				div.list-block__value.clearfix
+					div.list-block__time 3 items
+					div.list-block__items Mar 13
+
+		div.select-block__bottom.block-bottom.clearfix
+			div.block-bottom__time 2h ago
+			div.block-bottom__btns
+				button(type = "button").block-bottom__share
+				button(type = "button").block-bottom__url

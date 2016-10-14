@@ -1,0 +1,32 @@
+.empty-block
+	block()
+
+	.block-bottom
+		padding:12px 0
+	&_type
+		&_archived
+			opacity: 0.7;
+
+	&__desc
+		float: right
+		
+		&_type
+			&_archived
+				color: #858585
+
+	&__corner
+		width: 0;
+		height: 0;
+		border-top: 48px solid #3c434a;
+		border-left: 48px solid transparent;
+		position: absolute
+		right:0
+		top:0
+
+		&:before
+			content: ''
+			display: block
+			@extend .svg-lock
+			position: absolute
+			top: -44px;
+			left: -20px;

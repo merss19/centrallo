@@ -1,0 +1,78 @@
+.gallery-block
+	block()
+
+	&__list
+		padding:8px 0
+		margin:0 -6px
+
+	&__item
+		padding:0 6px
+		float: left
+		width: 33%
+		height: 140px;
+		
+
+	&__pic
+		width:100%
+
+	&__date
+		color: #858585
+		border-top:1px solid #bdbdbd
+		padding: 12px 0
+
+	&__label
+		position: relative
+		padding-left:25px
+		cursor: pointer
+		display: block
+
+	&__input
+		display: none;
+
+		&:checked ~ .select-block__check
+			background: #2aa1c0;
+			border:none
+
+			&:before
+				content: "";
+				display: inline-block;
+				@extend .svg-check
+				position: absolute;
+				top:0;
+				left:0;
+
+	&__check
+		display: inline-block;
+		width: 14px;
+		height: 14px;
+		border-radius: 2px;
+		border: solid 2px #b8b8b8;
+		cursor: pointer;
+		position: absolute;
+		top:5px;
+		left:0;
+
+.block-bottom
+	&__bottom
+		padding: 8px 0
+
+	&__time
+		color:#aeb4ba
+		float: left
+
+	&__btns
+		float: right
+
+	&__url
+		@extend .svg-url
+		border: none;
+		display: inline-block;
+
+
+	&__share
+		@extend .svg-share
+		border: none;
+		display: inline-block;
+		margin-right: 12px;
+
+

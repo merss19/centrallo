@@ -1,0 +1,13 @@
+mixin empty-block(text,className)
+	if className
+		div(class = 'empty-block empty-block_type_'+className)
+			div.empty-block__corner
+			div.block-bottom.clearfix
+				div.block-bottom__time 2h ago
+				div(class = 'block-bottom__desc block-bottom__desc_type_'+className)=text
+	else
+		div.empty-block
+			div.empty-block__corner
+			div.block-bottom.clearfix
+				div.block-bottom__time 2h ago
+				div.block-bottom__desc=text

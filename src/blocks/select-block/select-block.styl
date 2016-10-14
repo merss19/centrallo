@@ -1,0 +1,115 @@
+.select-block
+	block()
+	padding: 5px 16px 15px;
+	@media (min-width tablet)
+		padding: 16px 31px 11px;
+
+	&__corner
+		width: 0;
+		height: 0;
+		border-top: 46px solid color-mark;
+		border-left: 46px solid transparent;
+		position: absolute
+		right:0
+		top:0
+
+		&:before
+			content: ''
+			display: block
+			@extend .svg-star
+			position: absolute
+			top: -43px;
+			left: -23px;
+
+	&__list
+		padding:7px 0
+
+	&__item
+		padding: 3.7px 0;
+
+	&__label
+		position: relative
+		padding-left: 23px;
+		cursor: pointer
+		display: inline-block;
+
+	&__input
+		display: none;
+
+		&:checked ~ .select-block__check
+			background: #3b99fc;
+			border:none
+
+			&:before
+				content: "";
+				display: inline-block;
+				@extend .svg-check
+				position: absolute;
+				top:0;
+				left:0;
+
+	&__check
+		display: inline-block;
+		width: 14px;
+		height: 14px;
+		border-radius: 2px;
+		border: solid 2px #b8b8b8;
+		cursor: pointer;
+		position: absolute;
+		top: 3px;
+		left: 0;
+
+	&__bottom
+		padding: 9px 14px;
+
+.block-bottom
+	padding: 9px 0;
+
+	&__time
+		color:#aeb4ba
+		display: inline-block;
+
+	&__btns
+		float: right
+		margin-top: -3px;
+		display: inline-block;
+		position: relative;
+
+	&__url
+		@extend .svg-url
+		border: none;
+		display: inline-block;
+
+
+	&__share
+		@extend .svg-share
+		border: none;
+		display: inline-block;
+		margin-right: 12px;
+
+	&__desc
+		float: right
+		padding-right: 30px
+
+.tooltip
+	position: absolute
+	margin: 10px 20px;
+	display: none
+	top: -43px;
+	left: -38px;
+
+	&__arrow
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-color: transparent;
+		border-style: solid;
+
+	&__inner
+		max-width: 200px;
+		padding: 3px 8px;
+		color: #fff;
+		text-align: center;
+		opacity: 0.7;
+		border-radius: 3px;
+		background-color: #404040;

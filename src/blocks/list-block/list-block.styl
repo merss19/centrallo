@@ -1,0 +1,57 @@
+.list-block
+	block()
+	padding: 2px 17px 17px;
+	@media (min-width tablet)
+		padding: 16px 30px;
+
+
+	&__list
+		padding: 3px 0;
+
+	&__item
+		padding: 12px 0 4px;
+		@media (min-width tablet)
+			border-bottom: 1px solid #bdbdbd;
+			padding: 12px 0;
+
+		&:last-child
+			border-bottom:none
+
+	&__name
+		color: #333333
+		font-family:HelveticaMedium
+		cursor: pointer
+		@media (min-width tablet)
+			float: left
+
+	&__icon
+		display: inline-block;
+		transition all 0.4s
+
+		&:before
+			display: inline-block
+			margin-right: 11px;
+			color: #a6aeb6
+			@media (min-width tablet)
+				margin-right: 16px;
+		&:hover
+			&:before
+				color: color-mark
+
+	&__value
+		padding-top: 5px;
+		@media (min-width tablet)
+			float: right
+			margin-top: -2px;
+			padding-top:0
+
+	&__time
+		float: left
+		color: #858585
+		padding-left:26px
+		@media (min-width tablet)
+			padding: 0 51px 0 0;
+
+	&__items
+		color: #858585
+		float: right

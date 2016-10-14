@@ -1,0 +1,19 @@
+include ../header/header
+include ../user-block/user-block
+include ../select-block/select-block
+include ../list-block/list-block
+include ../gallery-block/gallery-block
+include ../main-block/main-block
+include ../empty-block/empty-block
+include ../footer/footer
+mixin index()
+	+header()
+	div.inner
+		+user-block()
+		+select-block()
+		+list-block()
+		+gallery-block()
+		+main-block()
+		+empty-block('Protected')
+		+empty-block('Archived', 'archived')
+	+footer()
