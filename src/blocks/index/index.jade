@@ -6,6 +6,7 @@ include ../gallery-block/gallery-block
 include ../main-block/main-block
 include ../empty-block/empty-block
 include ../footer/footer
+include ../modal/modal
 mixin index()
 	+header()
 	div.inner
@@ -17,3 +18,5 @@ mixin index()
 		+empty-block('Protected','protected')
 		+empty-block('Archived', 'archived')
 	+footer()
+	div.overlay
+	+modal()

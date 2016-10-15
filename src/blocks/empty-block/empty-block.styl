@@ -27,9 +27,12 @@
 					@extend .svg-lock
 					position: absolute
 					z-index:2
-					top: 47px;
-					left: 6px;
+					top: 43px;
+					left: 4px;
 					transform: rotate(45deg);
+					@media (min-width tablet)
+						top: 47px;
+						left: 6px;
 
 			&_archived
 				&:before
@@ -37,7 +40,10 @@
 					display: block
 					position: absolute
 					@extend .svg-box
-					top: 48px;
-					left: 4px;
+					top: 42px;
+					left: 2px;
 					z-index:2
 					transform: rotate(45deg);
+					@media (min-width tablet)
+						top: 48px;
+						left: 4px;

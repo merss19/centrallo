@@ -8,16 +8,16 @@ mixin main-block()
 						img.photo-block__img(src = "assets/img/content/photo-333.png" alt = "")
 				div.photo-block__item
 					div.photo-block__pic
-						img.photo-block__img(src = "assets/img/content/photo-44.png" alt = "")
+						img.photo-block__img.photo-block__img_type_vertical(src = "assets/img/content/photo-44.png" alt = "")
 				div.photo-block__item
 					div.photo-block__pic
-						img.photo-block__img(src = "assets/img/content/photo-55.png" alt = "")
+						img.photo-block__img.photo-block__img_type_full(src = "assets/img/content/photo-55.png" alt = "")
 				div.photo-block__item
 					div.photo-block__pic
-						img.photo-block__img(src = "assets/img/content/photo-66.png" alt = "")
+						img.photo-block__img.photo-block__img_type_full(src = "assets/img/content/photo-66.png" alt = "")
 		div.main-block__contacts.contacts-block.clearfix
-			div.contacts-block__map-wr
-				div.contacts-block__map
+			div.contacts-block__map#map
+				img(src = "assets/img/content/map.png")
 			div.contacts-block__address.address-block
 				div.address-block__name Merry Bergtraum High School for Business Cariers
 				div.address-block__location
@@ -41,7 +41,7 @@ mixin main-block()
 					div.files-block__name work_…hard.doc
 
 
-		div.select-block__bottom.block-bottom.clearfix
+		div.files-block__bottom.select-block__bottom.block-bottom.clearfix
 			div.block-bottom__time 2h ago
 			div.block-bottom__btns
 				div.tooltip

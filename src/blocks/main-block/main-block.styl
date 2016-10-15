@@ -1,6 +1,9 @@
 .main-block
 	block()
-	padding: 30px 30px 15px;
+	padding: 10px 16px 15px;
+	@media screen and (min-width tablet)
+		padding: 30px 30px 15px;
+
 
 	&__text
 		line-height:26px
@@ -12,7 +15,6 @@
 		padding: 27px 0 23px;
 		border-bottom:1px solid #bdbdbd;
 		border-top:1px solid #bdbdbd;
-		margin:0 -8px
 
 .photo-block
 	&__list
@@ -20,22 +22,43 @@
 		margin:0 -6px
 
 	&__item
-		padding: 0 6px
+		padding: 3px
 		float: left
-
+		text-align: center;
+		@media screen and (min-width tablet)
+			padding: 0 6px
 	&__pic
 		display: block
 
+	&__img
+		height:120px
+		width 186px
+		@media screen and (min-width mobile)
+			width:auto
+
+		&_type
+			&_vertical
+				width:auto
+
+			&_full
+				width:100%
+				height:auto
+				@media screen and (min-width mobile)
+					width:auto
+					height:120px
+
 .contacts-block
-	&__map-wr
-		width: 316px;
-		height: 200px;
-		padding: 0 8px
+	&__map
 		float: left
+
+		&-img
+			width: 316px;
+			height: 200px;
+			@media screen and (min-width mobile)
+				width:auto
 
 	&__address
 		float: left;
-		padding: 0 8px;
 
 .files-block
 	padding: 24px 0 10px;
@@ -44,10 +67,14 @@
 		padding: 0 8px;
 
 	&__item
-		padding: 0 21px
+		padding: 0 13px 27px
 		float: left
-		text-align: center
 		color: #494949;
+		text-align: center
+		width:50%
+		@media screen and (min-width tablet)
+			padding: 0 21px
+			width:33%
 
 		&:hover
 			text-decoration: none
@@ -64,14 +91,25 @@
 		width: 47px;
 		height: 59px;
 
+	&__bottom
+		margin-top: -20px;
+		@media screen and (min-width tablet)
+			margin-top:0
+
 .address-block
+	padding: 13px 0 0
+	@media screen and (min-width tablet)
+		padding-left: 16px;
+
 	&__location
 		line-height: 9px;
 		color: #858585
 
 	&__name
-		line-height: 17px;
+		line-height: 21px;
 		font-family:HelveticaMedium
+		@media screen and (min-width tablet)
+			line-height: 17px;
 
 	&__link
 		color: #00adff

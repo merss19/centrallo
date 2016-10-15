@@ -10,10 +10,13 @@
 			display: block
 			@extend .svg-star
 			position: absolute;
-			top: 48px;
-			left: 5px;
+			top: 41px;
+			left: 2px;
 			z-index: 2;
 			transform: rotate(-30deg);
+			@media (min-width tablet)
+				top: 48px;
+				left: 5px;
 
 	&__list
 		padding:7px 0
@@ -93,8 +96,10 @@
 	position: absolute
 	margin: 10px 20px;
 	display: none
-	top: -43px;
-	left: -38px;
+	white-space: nowrap;
+	top: -56px;
+	left: -42px;
+
 
 	&__arrow
 		position: absolute;
@@ -102,12 +107,18 @@
 		height: 0;
 		border-color: transparent;
 		border-style: solid;
+		border-width: 5px 6px 0;
+		border-top-color: #404040;
+		bottom: -5px;
+		left: 50%;
+		opacity: 0.7;
 
 	&__inner
 		max-width: 200px;
-		padding: 3px 8px;
 		color: #fff;
 		text-align: center;
 		opacity: 0.7;
+		font-size: 14px;
+		padding: 8px 15px;
 		border-radius: 3px;
 		background-color: #404040;

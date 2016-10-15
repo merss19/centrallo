@@ -1,6 +1,6 @@
 mixin header()
 	header.header&attributes(attributes)
-		div.header__download.download-block.hidden-lg.hidden-md.clearfix
+		div.header__download.download-block.hidden-lg.hidden-md.clearfix.js-block-close
 			div.inner.clearfix
 				div.download-block__desc
 					div.download-block__name Centrallo
@@ -9,7 +9,7 @@ mixin header()
 					div.download-block__btn
 						a(href = "#").btn.btn_type_download Download
 					div.download-block__btn.download-block__btn_type_close
-						button.download-block__close
+						button.download-block__close.js-btn-close
 		div.header__top
 			div.inner.clearfix
 				div.header__logo

@@ -1,15 +1,23 @@
 .gallery-block
 	block()
-	padding: 21px 30px 12px;
+	padding: 16px 23px 12px;
+	@media (min-width tablet)
+		padding: 21px 30px 12px;
+
 
 	&__list
-		padding:9px 0
+		padding:0
 		margin:0 -6px
+		@media (min-width tablet)
+			padding:9px 0
 
 	&__item
-		padding:0 6px
-		float: left
-		width: 27.97%;
+		width: 100%;
+		margin-bottom: 6px;
+		@media (min-width mobile)
+			padding:0 6px
+			float: left
+			width: 27.97%;
 
 	&__date
 		color: #858585
