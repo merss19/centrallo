@@ -1,6 +1,7 @@
 extends ../blocks/layout-default/layout-default
 include ../blocks/index/index
-
+block head
+	- var pageTitle = 'Centrallo';
 block content
 	+index()
 

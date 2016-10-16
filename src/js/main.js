@@ -2,58 +2,42 @@
 
 const userPage = {
     init: function(){
-        console.log('init')
 
         let btnsTooltip = document.querySelectorAll('.block-bottom__url'),
             btnsClose = document.querySelectorAll('.js-btn-close'),
-            btnsModal = document.querySelectorAll('.js-modal-btn')
+            btnsModal = document.querySelectorAll('.js-modal-btn'),
+            gridPhoto = document.querySelector('.photo-block__list')
 
 
-        if(btnsTooltip.length != 0){
+        if(btnsTooltip.length !== 0){
             userPage.tooltip(btnsTooltip)
         }
 
-        if(btnsClose.length != 0){
+        if(btnsClose.length !== 0){
             userPage.close(btnsClose)
         }
 
-        if(btnsModal .length != 0){
+        if(btnsModal .length !== 0){
             userPage.modal(btnsModal)
         }
-    },
+
+        if(gridPhoto){
+            userPage.isotop(gridPhoto)
+        }
+    }
+    ,
     modal : function(btnsModal) {
-        console.log('modal')
 
-        Array.prototype.forEach.call(btnsModal, (btn, i) => {
-            btn.addEventListener('click', openModal)
+        function openModal() {
 
-        })
-
-
-        function openModal(e) {
-            console.log('clickmodal')
             let modal = document.querySelector('.modal'),
-                feedback = document.querySelector('.modal__inner'),
                 overlay = document.querySelector('.overlay'),
                 close = document.querySelector('.js-modal-close')
 
             overlay.style.display = 'block'
             modal.style.display = 'block'
 
-            overlay.addEventListener('click', closeModal)
-            close.addEventListener('click', closeModal)
-
-            window.onresize = () =>{
-                let width = window.innerWidth
-                if(width > 768){
-                    closeModal()
-                }
-                console.log(window.innerWidth)
-            }
-
             function  closeModal(){
-                console.log('closeModal')
-
                 overlay.style.display = 'none'
                 modal.style.display = 'none'
 
@@ -61,25 +45,38 @@ const userPage = {
                 close.removeEventListener('click', closeModal)
             }
 
+            overlay.addEventListener('click', closeModal)
+            close.addEventListener('click', closeModal)
+
+            window.onresize = () =>{
+                let width = window.innerWidth
+
+                if(width > 768){
+                    closeModal()
+                }
+
+            }
+
+
 
         }
-    },
 
-    close : function(btnsClose){
-        console.log(' close')
-
-        Array.prototype.forEach.call(btnsClose, function(btn, i) {
-            btn.addEventListener('click', closeBlock)
+        Array.prototype.forEach.call(btnsModal, (btn) => {
+            btn.addEventListener('click', openModal)
 
         })
 
-        function closeBlock(e){
+
+    },
+
+    close : function(btnsClose){
+
+        function closeBlock(){
 
             function closest(target, selector) {
-                console.log('closest')
+
                 while (target) {
-                    console.log(target)
-                    if (target.matches(selector)) return target;
+                    if (target.matches(selector)) return target
                     target = target.parentNode;
                 }
 
@@ -91,46 +88,68 @@ const userPage = {
             block.style.display = 'none'
 
         }
+
+        Array.prototype.forEach.call(btnsClose, function(btn) {
+            btn.addEventListener('click', closeBlock)
+
+        })
+
+    },
+
+    isotop : (gridPhoto) => {
+
+           new Isotope( gridPhoto, {
+            // options...
+            itemSelector: '.photo-block__item',
+            masonry: {
+                columnWidth:2
+            }
+        });
     },
 
     tooltip : function(btns){
-        console.log('tooltip')
-        Array.prototype.forEach.call(btns, function(btn, i){
+
+        function hideTooltip(e){
+
+            let target = e.target,
+                parent = target.parentNode,
+                tooltip = parent.querySelector('.tooltip')
+
+            tooltip.style.display = 'none'
+
+        }
+
+        function showTooltip(e){
+
+            let target = e.target,
+                className = 'block-bottom__url',
+                parent = target.parentNode,
+                url = target.getAttribute('data-url'),
+                tooltip = parent.querySelector('.tooltip'),
+                checkBtn
+
+            if (target.classList){
+                checkBtn = target.classList.contains(className)
+            }
+            else{
+                checkBtn= new RegExp('(^| )' + className + '( |$)', 'gi').test(target.className)
+            }
+
+
+            if(checkBtn){
+
+                tooltip.style.display = 'inline-block'
+                tooltip.querySelector('.tooltip__inner').innerHTML = url
+
+
+            }
+        }
+
+        Array.prototype.forEach.call(btns, function(btn){
             btn.addEventListener('mouseover',showTooltip)
             btn.addEventListener('mouseout',hideTooltip)
 
-            function hideTooltip(e){
-                console.log('hideTooltip')
-                let target = e.target,
-                    parent = target.parentNode,
-                    tooltip = parent.querySelector('.tooltip')
 
-                tooltip.style.display = 'none'
-
-            }
-
-            function showTooltip(e){
-                console.log('showTooltip')
-                let target = e.target,
-                    className = 'block-bottom__url',
-                    parent = target.parentNode,
-                    url = target.getAttribute('data-url'),
-                    tooltip = parent.querySelector('.tooltip'),
-                    checkBtn
-
-                if (target.classList)
-                    checkBtn = target.classList.contains(className)
-                else
-                    checkBtn= new RegExp('(^| )' + className + '( |$)', 'gi').test(target.className)
-
-                if(checkBtn){
-
-                    tooltip.style.display = 'inline-block'
-                    tooltip.querySelector('.tooltip__inner').innerHTML = url
-
-
-                }
-            }
         });
     }
 
@@ -139,14 +158,8 @@ const userPage = {
 
 userPage.init()
 
-var grid = document.querySelector('.photo-block__list');
-var iso = new Isotope( grid, {
-    // options...
-    itemSelector: '.photo-block__item',
-    masonry: {
-        columnWidth:2
-    }
-});
+
+
 
 
 

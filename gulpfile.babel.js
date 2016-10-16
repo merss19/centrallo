@@ -1,27 +1,27 @@
-import gulp from 'gulp';
-import plumber from 'gulp-plumber';
-import errorHandler from 'gulp-plumber-error-handler';
-import stylus from 'gulp-stylus';
-import cssnano from 'gulp-cssnano';
-import sourcemaps from 'gulp-sourcemaps';
-import postcss from 'gulp-postcss';
-import jade from 'gulp-jade';
-import pugLint from 'gulp-pug-lint';
-import prettify from 'gulp-jsbeautifier';
-import cached from 'gulp-cached';
-import browserSync from 'browser-sync';
-import runSequence from 'run-sequence';
-import notify from 'gulp-notify';
-import stylint from 'gulp-stylint';
-import  csslint from 'gulp-csslint';
+import gulp from 'gulp'
+import plumber from 'gulp-plumber'
+import errorHandler from 'gulp-plumber-error-handler'
+import stylus from 'gulp-stylus'
+import sourcemaps from 'gulp-sourcemaps'
+import postcss from 'gulp-postcss'
+import jade from 'gulp-jade'
+import pugLint from 'gulp-pug-lint'
+import prettify from 'gulp-jsbeautifier'
+import browserSync from 'browser-sync'
+import runSequence from 'run-sequence'
+import notify from 'gulp-notify'
+import stylint from 'gulp-stylint'
+import  csslint from 'gulp-csslint'
 import svgSprite from 'gulp-svg-sprite'
-import  gulpIf from 'gulp-if';
+import  gulpIf from 'gulp-if'
 import postcssSorting from 'postcss-sorting'
 import babel from 'gulp-babel'
 import jshint from 'gulp-jshint'
-var sorting = require('postcss-sorting');
-var clean = require('gulp-clean');
-var print = require('gulp-print');
+import sorting  from 'postcss-sorting'
+import clean from 'gulp-clean'
+import  gcmq from 'gulp-group-css-media-queries'
+import stylish from 'jshint-stylish'
+
 
 const processors = [
     require('autoprefixer')({ browsers: ['last 2 version'] }),
@@ -29,8 +29,8 @@ const processors = [
 ]
 
 
-/*const bs = browserSync.create();*/
-var bs = require("browser-sync").create();
+
+const bs = require("browser-sync").create();
 
 const srcPaths = {
     js: 'src/js/**/*.js',
@@ -55,6 +55,7 @@ const distPaths = {
     vendors: 'src/js/_core/'
 }
 
+// css tasks
 gulp.task('css', () => {
     gulp.src(srcPaths.styl)
         .pipe(plumber({errorHandler: errorHandler(`Error in \'css\' task`)}))
@@ -64,10 +65,11 @@ gulp.task('css', () => {
         }))
         .on('error', notify.onError())
         .pipe(postcss(processors))
+        .pipe(gcmq())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/assets/css'))
 })
-
+// styles:lint tasks
 gulp.task('styles:lint', () => (
     gulp.src('src/blocks/**/*.styl')
         .pipe(stylint({
@@ -78,17 +80,17 @@ gulp.task('styles:lint', () => (
 ));
 
 
-// lint tasks
+// css:lint tasks
 gulp.task('csslint', function() {
     gulp.src('dist/css/app.css')
         .pipe(csslint('.csslintrc'))
         .pipe(csslint.formatter(require('csslint-stylish')))
 });
 
+// templates tasks
 gulp.task('templates', () => (
     gulp.src('src/pages/*.jade')
         .pipe(plumber({errorHandler: errorHandler(`Error in \'templates\' task`)}))
-        //.pipe(cached('jade'))
         .pipe(jade())
         .pipe(prettify({
             braceStyle: 'expand',
@@ -111,6 +113,7 @@ gulp.task('templates', () => (
         })
 ));
 
+// templates:lint
 gulp.task('templates:lint', () =>
     gulp
         .src('src/{blocks,pages}/**/*.jade')
@@ -147,11 +150,10 @@ gulp.task('svgSprite', function() {
 // copy tasks
 gulp.task('copy', function() {
     gulp.src('src/assets/**/*')
-    .pipe(print())
     .pipe(gulp.dest('dist/assets'))
 });
 
-var stylish = require('jshint-stylish');
+
 // js tasks
 gulp.task('js', function() {
     gulp.src('src/js/*.js')
@@ -170,22 +172,7 @@ gulp.task('watch', () => {
 
 });
 
-/*gulp.task('browser-sync', () => {
- var files = [
- distPaths.dist
- ];
 
- browserSync.init(files,{
- reloadOnRestart: true,
- port: 3000,
- server: {
- baseDir: './dist/'
- }
- });
-
- browserSync.watch(distPaths.dist2).on('change',browserSync.reload)
-
- });*/
 gulp.task('browser-sync', () => {
     var files = [
         distPaths.dist

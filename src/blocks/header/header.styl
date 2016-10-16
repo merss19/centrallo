@@ -23,10 +23,19 @@
 		color #fff
 		font-size 13px
 
+		&:hover
+			color: color-main
+			text-decoration: none
+
 	&__link
 		color color-main
 		margin-right: 7px;
 		border-bottom 1px solid color-main
+		
+		&:hover
+			border-bottom: none
+			text-decoration: none
+			color: darken(color-main, 20%)
 
 	&__sign-up
 		text-align center
@@ -35,9 +44,13 @@
 		display none
 		color #a3adb3
 		font-family HelveticaMedium
-		@media (min-width tablet)
+		@media screen and  (min-width tablet)
 			display: inline-block;
 			margin-right: 98px;
+
+		&:hover
+			color: #fff
+			text-decoration: none
 
 		&_type
 			&_mobile
@@ -45,7 +58,7 @@
 				float right
 				padding-right 15px
 				display: block
-				@media (min-width tablet)
+				@media screen and  (min-width tablet)
 					display: none
 .download-block
 	background: color-main
@@ -60,14 +73,14 @@
 		display: inline-block
 		vertical-align: middle
 		margin-right: 10px;
-		@media (min-width tablet)
+		@media screen and  (min-width tablet)
 			margin-right: 23px;
 
 		&_type
 			&_close
 				margin-right: -5px;
 				padding-right:0
-				@media (min-width tablet)
+				@media screen and  (min-width tablet)
 					margin-right: -9px;
 	&__close
 		@extend .svg-close
@@ -95,5 +108,5 @@
 	&__text
 		font-size: 11px
 		color: #fff
-		@media (min-width tablet)
+		@media screen and  (min-width tablet)
 			font-size: 12px

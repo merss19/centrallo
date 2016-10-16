@@ -8,15 +8,26 @@ include ../empty-block/empty-block
 include ../footer/footer
 include ../modal/modal
 mixin index()
+	//header
 	+header()
-	div.inner
+	//content
+	section.inner
+		//user-block
 		+user-block()
+		//select-block
 		+select-block()
+		//list-block
 		+list-block()
+		//gallery-block
 		+gallery-block()
+		//main-block
 		+main-block()
+		//empty-block
 		+empty-block('Protected','protected')
+		//empty-block
 		+empty-block('Archived', 'archived')
+	//footer
 	+footer()
 	div.overlay
+	//modal
 	+modal()

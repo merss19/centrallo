@@ -13,9 +13,11 @@ mixin header()
 		div.header__top
 			div.inner.clearfix
 				div.header__logo
-				div.header__auth
-					a.header__log-in log in
-					a.header__sign-up.header__sign-up_type_mobile SIGN UP
-					div.header__sign-up
+				ul.header__auth
+					li
+						a.header__log-in(href = "#") log in
+					li
+						a.header__sign-up.header__sign-up_type_mobile(href = "#") SIGN UP
+					li.header__sign-up
 						a.header__link(href="#") SIGN UP FOR FREE
 						|— START PUBLISHING IN MINUTES
