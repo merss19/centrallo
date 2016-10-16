@@ -31,32 +31,10 @@ const processors = [
 
 const bs = require("browser-sync").create();
 
-const srcPaths = {
-    js: 'src/js/**/*.js',
-    styl: 'src/styles/*.styl',
-    templates: 'src/pages/*.jade',
-    icons: 'src/svg/icons/*',
-    svg: '_src/svg/*.svg',
-    img: 'src/img/**/*',
-    data: 'src/data/',
-    vendors: [
-
-    ]
-}
-
-const distPaths = {
-    dist: 'dist/**/*.*',
-    js: 'build/js/',
-    css: 'dist/css/',
-    templates: 'dist/',
-    img: 'build/img',
-    svg: 'build/svg/',
-    vendors: 'src/js/_core/'
-}
 
 // css tasks
 gulp.task('css', () => {
-    gulp.src(srcPaths.styl)
+    gulp.src('src/styles/*.styl')
         .pipe(plumber({errorHandler: errorHandler(`Error in \'css\' task`)}))
         .pipe(sourcemaps.init())
         .pipe(stylus({
@@ -106,7 +84,7 @@ gulp.task('templates', () => (
             console.log(err)
         })
         .pipe(clean('dist/index.html'))
-        .pipe(gulp.dest(distPaths.templates))
+        .pipe(gulp.dest('dist/'))
         .on('end', function() {
             console.log('succssee');
         })
@@ -174,7 +152,7 @@ gulp.task('watch', () => {
 
 gulp.task('browser-sync', () => {
     var files = [
-        distPaths.dist
+        'dist/**/*.*'
     ];
 
     bs.init(files,{
@@ -191,7 +169,7 @@ gulp.task('browser-sync', () => {
         }
     });
 
-    bs.watch(distPaths.dist).on('change', bs.reload);
+    bs.watch('dist/**/*.*').on('change', bs.reload);
 
 });
 

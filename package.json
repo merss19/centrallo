@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^6.5.1",
     "babel": "^6.5.2",
     "babel-core": "^6.7.4",
     "babel-preset-es2015": "^6.16.0",
@@ -19,6 +20,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-cached": "^1.1.0",
+    "gulp-clean": "^0.3.2",
     "gulp-csslint": "^1.0.0",
     "gulp-group-css-media-queries": "^1.1.0",
     "gulp-if": "^2.0.1",
@@ -40,8 +42,7 @@
     "jshint-stylish": "^2.2.1",
     "postcss-sorting": "^1.7.0",
     "stylint-stylish": "^1.2.0",
-    "svg-sprite": "^1.3.6",
-    "gulp-clean": "^0.3.2"
+    "svg-sprite": "^1.3.6"
   },
   "dependencies": {
     "isotope-layout": "^3.0.1"
