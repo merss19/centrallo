@@ -1,0 +1,128 @@
+html, body
+	height 100%
+
+.inner
+	max-width 984px
+	padding: 0 12px
+	margin: 0 auto
+	width: 100%
+	height: auto
+	min-width: 320px;
+
+	@media (min-width tablet)
+		max-width 1008px
+		padding: 0 24px
+
+.clearfix
+	&:after,
+	&:before
+		display table
+		clear both
+		content ''
+
+::selection
+	background: #37b7ec
+	color: #fff
+img
+	width 100%
+	height auto
+
+
+ul
+	margin:0
+	list-style none
+	padding-left 0
+
+
+button
+	border none
+	outline: none;
+
+.btn
+	border: none
+	font-size: 13px
+	text-align: center
+	border-radius: 4px;
+	padding: 0 6px;
+	height: 32px
+	width:100%
+	background: color-main
+	color: #fff
+	@media (min-width tablet)
+		padding:0 17px
+
+	&_type
+		&_share
+			background: #fff
+			color: #3c434a
+			line-height: 32px;
+
+
+			&:before
+				content: ''
+				display: inline-block
+				@extend .svg-share
+				position: relative;
+				left: -4px;
+				top: 5px;
+
+		&_download
+			color: color-main
+			background: #fff
+			padding: 0 18px;
+			height: 28px;
+			font-size: 12px;
+			display: inherit;
+			line-height: 28px;
+			text-decoration: none;
+
+			&:hover
+				color: color-main
+				text-decoration: none
+
+			@media (min-width tablet)
+				font-size: 13px;
+				padding: 0 25px;
+
+.table
+	display: table
+
+.table-raw
+	display: table-raw
+
+.table-cell
+	display: table-cell
+
+.block
+	&__corner
+		position: absolute;
+		overflow: hidden;
+		top: -61px;
+		right: -52px;
+		width: 71px;
+		height: 136px;
+		transform: rotate(-45deg)
+		@media (min-width tablet)
+			width: 70px;
+			height: 140px;
+			top: -62px;
+			right: -46px;
+
+		&-inner
+			position: relative;
+			top: 20px;
+			left: -47px;
+			width: 47px;
+			height: 100px;
+			border-radius: 0 5px 0 0;
+			transform: rotate(45deg);
+			background: color-mark;
+			@media (min-width tablet)
+				top: 22px;
+				left: -50px;
+				width: 56px;
+
+
+			&_color
+				&_black
+					background: #3c434a

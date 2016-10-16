@@ -1,0 +1,10 @@
+include ../page/page
+//include ../scripts/scripts
+
+doctype html
+html(lang='ru')
+	include ../head/head
+	+page
+		block content
+		script(src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js")
+		script(src="assets/js/main.js")

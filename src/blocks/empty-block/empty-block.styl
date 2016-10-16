@@ -1,0 +1,49 @@
+.empty-block
+	block()
+	padding: 15.5px 15.5px 13.5px;
+
+	&:last-child
+		margin-bottom:90px
+
+	.block-bottom
+		padding: 12px 14px 15px 12px;
+
+	&_type
+		&_archived
+			opacity: 0.7;
+
+	&__desc
+		float: right
+		
+		&_type
+			&_archived
+				color: #858585
+	&__corner
+		&_type
+			&_protected
+				&:before
+					content: ''
+					display: block
+					@extend .svg-lock
+					position: absolute
+					z-index:2
+					top: 43px;
+					left: 4px;
+					transform: rotate(45deg);
+					@media screen and  (min-width tablet)
+						top: 47px;
+						left: 6px;
+
+			&_archived
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					@extend .svg-box
+					top: 42px;
+					left: 2px;
+					z-index:2
+					transform: rotate(45deg);
+					@media screen and  (min-width tablet)
+						top: 48px;
+						left: 4px;

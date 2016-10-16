@@ -1,0 +1,44 @@
+mixin select-block()
+	section.select-block
+		div.select-block__corner.block__corner
+			div.block__corner-inner
+		ul.select-block__list
+			li.select-block__item
+				label.select-block__label(for ="box-1")
+					|Referral Accepted and Invited invitations not sorted by A-Z
+					input.select-block__input#box-1(type = "checkbox")
+					span.select-block__check
+
+			li.select-block__item
+				label.select-block__label(for ="box-2")
+					| Inbox shows me 242 items - that includes Done items; Only show me active
+					input.select-block__input#box-2(type = "checkbox")
+					span.select-block__check
+
+			li.select-block__item
+				label.select-block__label(for ="box-3")
+					| Inbox defaults to show done items - it should not
+					input.select-block__input#box-3(type = "checkbox")
+					span.select-block__check
+
+			li.select-block__item
+				label.select-block__label(for ="box-4")
+					| Lists default to Show Done - they should not
+					input.select-block__input#box-4(type = "checkbox")
+					span.select-block__check
+
+
+			li.select-block__item
+				label.select-block__label(for ="box-5")
+					| Recent view should sort by Created and show no Done items
+					input.select-block__input#box-5(type = "checkbox")
+					span.select-block__check
+
+		div.select-block__bottom.block-bottom.clearfix
+			div.block-bottom__time 2h ago
+			div.block-bottom__btns
+				div.tooltip
+					div.tooltip__arrow
+					div.tooltip__inner
+				button(type = "button").block-bottom__share
+				button(type = "button",data-url = "http://cll.io/a6lnu").block-bottom__url
